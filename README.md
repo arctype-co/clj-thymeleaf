@@ -4,16 +4,10 @@ A Clojure wrapper for Thymeleaf templating engine (http://www.thymeleaf.org/).
 
 ## Installation
 
-With Leiningen, run:
-
-```
-lein install
-```
-
-Add the following to your `:dependencies`:
+Add the following to your `deps.edn`:
 
 ```clojure
-[rchancode/clj-thymeleaf "0.1.0-SNAPSHOT"]
+{rchancode/clj-thymeleaf {:mvn/version "0.1.0-SNAPSHOT"}}
 ```
 
 ## Usage
