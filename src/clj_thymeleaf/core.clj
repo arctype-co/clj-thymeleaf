@@ -1,4 +1,4 @@
-(ns rchancode.clj-thymeleaf.core
+(ns clj-thymeleaf.core
   (:require [clojure.walk :refer [stringify-keys]])
   (:import org.thymeleaf.TemplateEngine
            org.thymeleaf.templateresolver.ClassLoaderTemplateResolver

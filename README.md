@@ -13,24 +13,18 @@ Add the following to your `deps.edn`:
 ## Usage
 
 ```clojure
-(use rchancode.clj-thymeleaf.core)
-```
-
-Or in the `ns` declaration:
-
-```clojure
-(:require [rchancode.clj-thymeleaf :refer :all])
+(:require [clj-thymeleaf.core :as thymeleaf])
 ```
 
 
 ```Clojure
-(let [engine (template-engine
+(let [engine (thymeleaf/template-engine
                :template-resolver-type :file ;; This can be either :file, :url or :classpath, defaults to :classpath.
                :prefix "./test/templates/"   ;; template file name prefix
                :suffix ".html"               ;; Template file name suffix
                :cacheable true               ;; whether to cache templates.
                )]
-  (render-file engine "test" {:title "Hello"}))
+  (thymeleaf/render-file engine "test" {:title "Hello"}))
 ```
 
 By default, the `render-file` function produces a string. You can also redirect the output to a `java.io.Writer` by passing it
