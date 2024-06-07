@@ -1,5 +1,5 @@
 {:deps {org.clojure/clojure {:mvn/version "1.11.1"}
-        org.thymeleaf/thymeleaf {:mvn/version "3.0.0.RELEASE"}}
+        org.thymeleaf/thymeleaf {:mvn/version "3.1.2.RELEASE"}}
 
  :paths ["src"]
 
