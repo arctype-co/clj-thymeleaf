@@ -50,14 +50,14 @@
    context-map - the map of values for the template to render.
    writer - optionally, redirects the output to a java.io.Writer and returns nil.
    "
-  ([^TemplateEngine engine ^String template context-map]
+  ([^TemplateEngine engine template context-map]
    (render-file engine template context-map nil))
-  ([^TemplateEngine engine ^String template context-map ^Writer writer]
-   (if (string? template)
-     (let [^Context ctx (Context.)]
-       (if (map? context-map)
-         (doseq [kv (stringify-keys context-map)]
-           (.setVariable ctx (first kv) (second kv))))
-       (if writer
-         (.process engine template ctx writer)
-         (.process engine template ctx))))))
+  ([^TemplateEngine engine template context-map ^Writer writer]
+   (let [^Context ctx (Context.)
+         ^String template-name (name template)]
+     (if (map? context-map)
+       (doseq [kv (stringify-keys context-map)]
+         (.setVariable ctx (first kv) (second kv))))
+     (if writer
+       (.process engine template-name ctx writer)
+       (.process engine template-name ctx)))))
